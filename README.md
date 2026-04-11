@@ -47,8 +47,10 @@ backend/
 ```bash
 git clone https://github.com/Samuel255231/Predict_house_price.git
 cd backend
+```
 
 ### 2. Créer un environnement virtuel
+
 
 python -m venv venv
 venv\Scripts\activate  
@@ -60,7 +62,6 @@ pip install -r requirements.txt
 ### 4. Configuration (.env)
 
 DATABASE_URL=postgresql://postgres:motdepasse@localhost:5432/immobilier_db
-
 SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
@@ -88,16 +89,14 @@ POST /auth/login
  Authorization: Bearer <token>
 
 
-#Modèle Machine Learning
+##Modèle Machine Learning
     ##Modèle : XGBoost
     ##Fichier : models/best_model_XGboost.pkl
     ##Features encodées automatiquement avant prédiction
 
-#Sécurité
-    ##Hash des mots de passe : bcrypt
-
-    ##Authentification : JWT
-
-    ##Middleware de logging des requêtes
-
-    ##Gestion globale des erreurs
+# Sécurité
+##  Hash des mots de passe : bcrypt
+##  Authentification : JWT
+##  Middleware de logging des requêtes
+## Gestion globale des erreurs
+```

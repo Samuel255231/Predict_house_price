@@ -12,7 +12,7 @@ API développée avec **FastAPI** permettant de prédire le prix d’un bien imm
 
 
 ##  Architecture du projet
-
+'''
 backend/
 │
 ├── app/
@@ -38,7 +38,7 @@ backend/
 ├── main.py # Point d'entrée
 ├── .env # Variables d'environnement
 ├── requirements.txt
-
+'''
 
 ## ⚙️ Installation
 

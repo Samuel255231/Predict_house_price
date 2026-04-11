@@ -85,19 +85,24 @@ http://127.0.0.1:8000/docs
 ## Authentification
 
 ### Register
+```bash
 POST /auth/register
-
+```
 ### Login 
+```bash
 POST /auth/login
+```
  #### Retourne un token JWT à utiliser dans :   
+ ```bash
  
  Authorization: Bearer <token>
+ ```
 
 
 ## Modèle Machine Learning
-    Modèle : XGBoost
-    Fichier : models/best_model_XGboost.pkl
-    Features encodées automatiquement avant prédiction
+# Modèle : XGBoost
+### Fichier : models/best_model_XGboost.pkl
+#### Features encodées automatiquement avant prédiction
 
 # Sécurité
     Hash des mots de passe : bcrypt

@@ -100,16 +100,13 @@ POST /auth/login
 
 
 ## Modèle Machine Learning
-# Modèle : XGBoost
-### Fichier : models/best_model_XGboost.pkl
-#### Features encodées automatiquement avant prédiction
+##### Modèle : XGBoost
+##### Fichier : models/best_model_XGboost.pkl
+##### Features encodées automatiquement avant prédiction
 
-# Sécurité
-    Hash des mots de passe : bcrypt
-
-    Authentification : JWT
-
-    Middleware de logging des requêtes
-    
-    Gestion globale des erreurs
+## Sécurité
+##### Hash des mots de passe : bcrypt
+##### Authentification : JWT
+##### Middleware de logging des requêtes
+##### Gestion globale des erreurs
 

@@ -51,25 +51,30 @@ cd backend
 
 ### 2. Créer un environnement virtuel
 
-
+```bash
 python -m venv venv
 venv\Scripts\activate  
+```
 
 ### 3. Installer les dépendances
-
+```bash
 pip install -r requirements.txt
+```
 
 ### 4. Configuration (.env)
+```bash
 
 DATABASE_URL=postgresql://postgres:motdepasse@localhost:5432/immobilier_db
 SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
+```
 
 ### 5. Lancer le serveur
+```bash
 
 uvicorn main:app --reload
-
+```
 #### API disponible sur :
 
 http://127.0.0.1:8000

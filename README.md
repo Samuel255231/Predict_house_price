@@ -1,43 +1,103 @@
-predict_price_house/
+# 🏠API de Prédiction de Prix Immobilier
+
+API développée avec **FastAPI** permettant de prédire le prix d’un bien immobilier en fonction de ses caractéristiques, avec gestion d’authentification, historique et performance du modèle.
+
+
+##  Fonctionnalités
+
+- 🔐 Authentification (JWT)
+- 📊 Prédiction de prix immobilier (Machine Learning - XGBoost)
+- 🧾 Historique des prédictions par utilisateur
+- 📈 Consultation des performances du modèle
+
+
+##  Architecture du projet
+
+backend/
 │
-├── backend/
-│   ├── app/
-│   │   ├── api/
-│   │   │   ├── routes/
-│   │   │   │   ├── predict.py        # Endpoint /predict
-│   │   │   │   ├── history.py        # Endpoint /history (pagination, filtre…)
-│   │   │   │   ├── perf.py           # Endpoint /perf (performance modèle)
-│   │   │   │   └── router.py         # Regroupe toutes les routes
-│   │   │
-│   │   ├── core/
-│   │   │   ├── database.py          # Connexion PostgreSQL
-│   │   │   └── config.py            # Variables globales (ex: FEATURE_ORDER)
-│   │   │
-│   │   ├── models/
-│   │   │   └── prediction_model.py  # Modèle SQLAlchemy (table predictions)
-│   │   │
-│   │   ├── schemas/
-│   │   │   ├── input_schema.py      # Features (Pydantic)
-│   │   │   └── output_schema.py     # Réponses API
-│   │   │
-│   │   ├── services/
-│   │   │   ├── prediction_service.py  # Logique prédiction
-│   │   │   ├── history_service.py     # Logique historique (pagination, filtre)
-│   │   │   └── evaluation_service.py  # Calcul des métriques
-│   │   │
-│   │   └── main.py                  # Point d'entrée FastAPI
-│   │
-│   ├── data/
-│   │   ├── X_test.csv
-│   │   └── y_test.csv
-│   │
-│   ├── ml_models/
-│   │   └── best_model_XGboost.pkl   # Ton modèle entraîné
-│   │
-│   ├── requirements.txt
-│   └── README.md
+├── app/
+│ ├── api/
+│ │ ├── routes/ # Endpoints API
+│ │ ├── deps.py # Dépendances (auth)
+│ │ └── router.py # Regroupement des routes
+│ │
+│ ├── core/
+│ │ ├── config.py # Configuration globale
+│ │ ├── database.py # Connexion DB
+│ │ └── security.py # JWT + Hash password
+│ │
+│ ├── models/ # Modèles SQLAlchemy
+│ ├── schemas/ # Schémas Pydantic
+│ ├── services/ # Logique métier
 │
-├── frontend/
-│   └── (React app)
+├── models/ # Modèle ML + métriques
+├── data/ # Données
+├── notebooks/ # Analyse & entraînement
+├── utils/
 │
-└── README.md
+├── main.py # Point d'entrée
+├── .env # Variables d'environnement
+├── requirements.txt
+
+
+## ⚙️ Installation
+
+### 1. Cloner le projet
+
+```bash
+git clone https://github.com/Samuel255231/Predict_house_price.git
+cd backend
+
+### 2. Créer un environnement virtuel
+
+python -m venv venv
+venv\Scripts\activate  
+
+### 3. Installer les dépendances
+
+pip install -r requirements.txt
+
+### 4. Configuration (.env)
+
+DATABASE_URL=postgresql://postgres:motdepasse@localhost:5432/immobilier_db
+
+SECRET_KEY=your_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+### 5. Lancer le serveur
+
+uvicorn main:app --reload
+
+#### API disponible sur :
+
+http://127.0.0.1:8000
+
+##### Documentation Swagger :
+http://127.0.0.1:8000/docs
+
+## Authentification
+
+### Register
+POST /auth/register
+
+### Login 
+POST /auth/login
+ #### Retourne un token JWT à utiliser dans :   
+ 
+ Authorization: Bearer <token>
+
+
+#Modèle Machine Learning
+    ##Modèle : XGBoost
+    ##Fichier : models/best_model_XGboost.pkl
+    ##Features encodées automatiquement avant prédiction
+
+#Sécurité
+    ##Hash des mots de passe : bcrypt
+
+    ##Authentification : JWT
+
+    ##Middleware de logging des requêtes
+
+    ##Gestion globale des erreurs

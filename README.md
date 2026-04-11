@@ -12,33 +12,33 @@ API développée avec **FastAPI** permettant de prédire le prix d’un bien imm
 
 
 ##  Architecture du projet
-'''
+```
 backend/
 │
 ├── app/
-│ ├── api/
-│ │ ├── routes/ # Endpoints API
-│ │ ├── deps.py # Dépendances (auth)
-│ │ └── router.py # Regroupement des routes
-│ │
-│ ├── core/
-│ │ ├── config.py # Configuration globale
-│ │ ├── database.py # Connexion DB
-│ │ └── security.py # JWT + Hash password
-│ │
-│ ├── models/ # Modèles SQLAlchemy
-│ ├── schemas/ # Schémas Pydantic
-│ ├── services/ # Logique métier
+│   ├── api/
+│   │   ├── routes/        # Endpoints API
+│   │   ├── deps.py        # Dépendances (auth)
+│   │   └── router.py      # Regroupement des routes
 │
-├── models/ # Modèle ML + métriques
-├── data/ # Données
-├── notebooks/ # Analyse & entraînement
+│   ├── core/
+│   │   ├── config.py      # Configuration globale
+│   │   ├── database.py    # Connexion DB
+│   │   └── security.py    # JWT + Hash password
+│
+│   ├── models/            # Modèles SQLAlchemy
+│   ├── schemas/           # Schémas Pydantic
+│   ├── services/          # Logique métier
+│
+├── models/                # Modèle ML + métriques
+├── data/                  # Données
+├── notebooks/             # Analyse & entraînement
 ├── utils/
 │
-├── main.py # Point d'entrée
-├── .env # Variables d'environnement
+├── main.py                # Point d'entrée
+├── .env                   # Variables d'environnement
 ├── requirements.txt
-'''
+```
 
 ## ⚙️ Installation
 

@@ -72,7 +72,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 ### 5. Lancer le serveur
 ```bash
 
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 #### API disponible sur :
 

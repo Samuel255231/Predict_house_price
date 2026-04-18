@@ -46,7 +46,6 @@ backend/
 
 ```bash
 git clone https://github.com/Samuel255231/Predict_house_price.git
-cd backend
 ```
 
 ### 2. Créer un environnement virtuel
